@@ -1,0 +1,47 @@
+This lisp interpreter is based on Paul Graham's paper, "The Roots of
+Lisp." (1)
+
+It is made available under the terms of the GNU Lesser GPL 3.0. (2)
+
+It is written in C and compiles with GCC 4.3.1. It should compile
+with any C99 compliant compiler.
+
+The interpreter supports the following lisp functions: cons, car,
+cdr, atom, eq, quote, cond, lambda, and label.
+
+Type "quit" to exit the interpreter.
+
+The code is organised as follows:
++-----------------------+
+|         main          |
++-----------------------+
+| eval  |    parser     |
++-------+               |
+| utils |               |
++-----------------------+
+| cons_impl & constants |
++-----------------------+
+
+The layering is not strict in the sense that higher layers may
+interact with any lower layer, not just the layer immediately below.
+For example, eval calls the cons_impl layer in addition to the utils
+layer.
+
+I wrote this program as a learning exercise for both C and lisp (my
+background is C++).
+
+If you find this software useful, please send a postcard to:
+
+    ADAM BURRY
+    32 CRAIGMILLAR AVE
+    ST. JOHN'S NL  A1E 1Z8
+    CANADA
+
+
+
+(1) Paul Graham, "The Roots of Lisp," January 18, 2002.
+	http://lib.store.yahoo.net/lib/paulgraham/jmc.ps
+
+(2) Free Software Foundation, "GNU Lesser General Public License,"
+	Version 3, 29 June 2007.
+	http://www.gnu.org/licenses/lgpl-3.0-standalone.html

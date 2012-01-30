@@ -1,0 +1,17 @@
+To build the interpreter:
+
+	$ cd src
+	$ make
+
+This builds a binary called "lisp". Executing this binary puts you
+in the lisp read-eval-print loop. To exit, type "quit".
+
+
+To run the tests:
+
+	$ cd test
+	$ make
+
+This builds three test programs. As each program is built, it is
+executed. Each "." in the output is a passed test. Failed tests cause
+the program to exit with an assert.
